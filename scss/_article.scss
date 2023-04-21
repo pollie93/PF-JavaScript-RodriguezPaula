@@ -1,80 +1,79 @@
 /* CONOCE A NUESTROS CAMPEONES */
 
-.container-champions{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px 0;
-    background-color: map-get($map: $blackPalette, $key: 'dos');
-    .titulo{
-        color: map-get($map: $whitePalette, $key:'uno');
-        font-size: 30px;
+.container-champions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0;
+  background-color: map-get($map: $blackPalette, $key: "dos");
+  .titulo {
+    color: map-get($map: $whitePalette, $key: "uno");
+    font-size: 30px;
+    font-weight: $textBoldI;
+    text-align: center;
+    .text-campeon {
+      font-size: 80px;
+      @include mediaQuery(sm) {
+        font-size: 65px;
+      }
+    }
+  }
+  .descripcion-champ {
+    color: map-get($map: $whitePalette, $key: "uno");
+    text-align: center;
+  }
+  .container-cards-champ {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 25px;
+    margin: 25px 0px;
+    @include mediaQuery(xxl) {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+    @include mediaQuery(xl) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include mediaQuery(l) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mediaQuery(m) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .champion-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: map-get($map: $blackPalette, $key: "cuatro");
+      border-radius: 20px;
+      padding: 1px;
+      &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+        background-color: map-get($map: $bluePalette, $key: "dos");
+      }
+      .card {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+      .champion-name {
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        text-align: center;
+        font-weight: $textBoldII;
+        color: map-get($map: $whitePalette, $key: "dos");
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 5px 0;
+        margin: auto;
+      }
+      .champ-cost {
+        font-size: $textMd;
         font-weight: $textBoldI;
         text-align: center;
-        .text-campeon{
-            font-size: 80px;
-            @include mediaQuery(sm){
-                font-size: 65px;
-            }
-        }
+        margin: auto;
+      }
     }
-    .descripcion-champ{
-        color:  map-get($map: $whitePalette, $key:'uno');
-        text-align: center;
-    }
-    .container-cards-champ{
-        display: grid;
-        grid-template-columns: repeat(5,1fr);
-        grid-template-rows: repeat(4,1fr);
-        gap: 25px;
-        margin: 25px 0px;
-        @include mediaQuery(xxl) {
-            grid-template-columns: repeat(4,1fr);
-            grid-template-rows: repeat(5,1fr);
-        }
-        @include mediaQuery(xl) {
-            grid-template-columns: repeat(3,1fr);
-        }
-        @include mediaQuery(l) {
-            grid-template-columns: repeat(2,1fr);
-        }
-        @include mediaQuery(m) {
-            grid-template-columns: repeat(1,1fr);
-        }
-        .champion-card{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: map-get($map: $blackPalette, $key: 'cuatro');
-            border-radius: 20px;
-            padding: 1px;
-            &:hover{
-                transform: scale(1.05);
-                cursor: pointer;
-                background-color: map-get($map: $bluePalette, $key: 'dos');    
-            }
-            .card{
-                border-top-left-radius: 20px;
-                border-top-right-radius: 20px;
-            }
-            .champion-name{
-                border-bottom-left-radius: 20px;
-                border-bottom-right-radius: 20px;
-                text-align: center;
-                font-weight: $textBoldII;
-                color:map-get($map: $whitePalette, $key: 'dos');
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                padding: 5px 0;
-                margin: auto;
-            }
-            .champ-cost{
-                font-size: $textMd;
-                font-weight: $textBoldI;
-                text-align: center;
-                margin: auto;
-            }
-        }
-    }
+  }
 }
-
