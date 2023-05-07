@@ -2,7 +2,7 @@
 
 ## Descripción:
 
-En este proyecto sale originalmente del proyecto anterior que fue la "Web de League of legends" en cual se plamó por medio HTML-CSS-SASS-Uso de librería como Bootstrap, una web de League of Legends. Comparto la url correspondiente al proyecto inicial: https://github.com/pollie93/PF-RodriguezPaula en el cual encontramos cinco pantallas, index, conocé a nuestros campeones, noticias, esports, entretenimiento.
+En este proyecto sale originalmente del proyecto anterior que fue la "Web de League of legends" en cual se plamó por medio HTML-CSS-SASS-Uso de librería como Bootstrap, una web de League of Legends. Comparto la url correspondiente al proyecto inicial: https://pf-rodriguezpaula.netlify.app/, https://github.com/pollie93/PF-RodriguezPaula en el cual encontramos cinco pantallas, index, conocé a nuestros campeones, noticias, esports, entretenimiento.
 Cada uno de dichos sitios son responsive.
 Para este proyecto, solo nos centramos en la pantalla de Compra de campeones, con lo cual se modificó el HTML original, y se cambió el nombre de "Conocé a nuestros campeones" a "Compra de campeones" para que por medio de JavaScript, el usuario pueda interactuar y poder comprar los campeones que se encuentran a disposición, como así también poder consultar una API pública.
 Para el desarrollo de dicha web utilizamos videos/información extraída de la pagina de Riot Games-League of legends, quienes poseen las licencias de Copyright.
