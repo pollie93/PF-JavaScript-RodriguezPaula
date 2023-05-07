@@ -124,7 +124,25 @@ const champsArray = [
 
 let esenciaAzul = 10050;
 
+const esenciaAzulStorage = localStorage.getItem('esenciaAzul');
+if (esenciaAzulStorage !== null) {
+    const esenciaAzulRecuperada = parseInt(esenciaAzulStorage, 10);
+    esenciaAzul = esenciaAzulRecuperada;
+} else {
+    console.log('No hay cantidad de esencia azul guardada en el localStorage');
+};
+
 const esenciaActual = document.getElementById("esenciaActual");
+
+const mostrarEnDomEsenciaRestante = () => {
+    const esenciaRestante = localStorage.getItem('esenciaAzul');
+    if (esenciaRestante !== null) {
+        esenciaActual.innerHTML += `
+            <p class="descripcion-champ" style="color: darkblue;">Esencia azul restante: ${esenciaRestante}</p>
+        `;
+    }
+};
+
 const mostrarEnDom = () => esenciaActual.innerHTML  +=
     `
         <p class="descripcion-champ" style="color: darkblue;">Esencia azul disponible: ${esenciaAzul}</p>
@@ -133,15 +151,14 @@ const mostrarEnDom = () => esenciaActual.innerHTML  +=
 const mostrarError = () => esenciaActual.innerHTML += ` 
     <p class="descripcion-champ" id="error" style="color: red;">No tienes suficiente esencia azul!</p>
 `
-
 mostrarEnDom();
 
 const limpiarDom = () => esenciaActual.innerHTML =  ``
 
-const championsEnCarrito = [];
+let championsEnCarrito = []; 
 
 const addToCart = (champion) => {
-    if (esenciaAzul - champion.championCost < 0) {
+    if ((esenciaAzul - champion.championCost) < 0) {
         const hayError = document.getElementById("error");
         if (!hayError) return mostrarError();
         return;
@@ -150,12 +167,55 @@ const addToCart = (champion) => {
     limpiarDom()
     mostrarEnDom()
     championsEnCarrito.push(champion);
-}
+    localStorage.setItem('championsEnCarrito', JSON.stringify(championsEnCarrito));
+    localStorage.setItem('esenciaAzul', esenciaAzul.toString());
+    limpiarDom()
+    mostrarEnDomEsenciaRestante()
+};
 
 champsArray.forEach((champion) => {
     const champButton = document.getElementById(champion.id);
     champButton.addEventListener("click", () => {
         addToCart(champion);
-        console.log(championsEnCarrito)
     })
-})
+});
+
+const resetContainerButton = document.getElementById("btnReset");
+resetContainerButton.addEventListener("click", () => {
+    localStorage.clear();
+    esenciaAzul = 10050;
+    limpiarDom();
+    mostrarEnDom();
+    championsEnCarrito = [];
+});
+
+
+/* ---LLamado a la API--- */
+const ciudad = 'Buenos Aires'; 
+const pais = 'Argentina'; 
+
+const btnConsultar = document.getElementById('btnConsultar');
+
+const consultarClimaApi = async () => {
+    const appId = 'cca4101ea4deeaf1a8df8b41cd61b44a';
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
+
+    const resultadoDiv = document.getElementById('resultado');
+
+    try {
+      resultadoDiv.innerHTML = `<p>Consultando clima para: ${ciudad}, ${pais}</p>`;
+
+      const respuesta = await fetch(url);
+      const datos = await respuesta.json();
+
+      resultadoDiv.innerHTML += `
+        <p>Temperatura: ${datos.main.temp} K</p>
+        <p>Humedad: ${datos.main.humidity}%</p>
+      `;
+    } catch (error) {
+      console.error(error);
+      resultadoDiv.innerHTML = '<p>Error al consultar el clima.</p>';
+    }
+};
+
+btnConsultar.addEventListener('click', async () => await consultarClimaApi());
