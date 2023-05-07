@@ -11,9 +11,9 @@ Para el desarrollo de dicha web utilizamos videos/información extraída de la p
 
 ### Deploy
 
-1. Link al [deploy a netlify](https://pf-rodriguezpaula.netlify.app/)
-2. Link al [deploy web github pages](https://pollie93.github.io/Pre-Entrega3-RodriguezPaula/index.html)
-3. Link a [github](https://github.com/pollie93/Pre-Entrega3-RodriguezPaula)
+1. Link al [deploy a netlify](https://moonlit-sawine-757675.netlify.app/index.html)
+2. Link al [deploy web github pages](https://pollie93.github.io/PF-JavaScript-RodriguezPaula/)
+3. Link a [github](https://github.com/pollie93/PF-JavaScript-RodriguezPaula)
 
 ## Instalacion:
 
