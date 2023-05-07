@@ -138,14 +138,14 @@ const mostrarEnDomEsenciaRestante = () => {
     const esenciaRestante = localStorage.getItem('esenciaAzul');
     if (esenciaRestante !== null) {
         esenciaActual.innerHTML += `
-            <p class="descripcion-champ" style="color: darkblue;">Esencia azul restante: ${esenciaRestante}</p>
+            <p class="descripcion-champ" style="color: lightblue;">Esencia azul restante: ${esenciaRestante}</p>
         `;
     }
 };
 
 const mostrarEnDom = () => esenciaActual.innerHTML  +=
     `
-        <p class="descripcion-champ" style="color: darkblue;">Esencia azul disponible: ${esenciaAzul}</p>
+        <p class="descripcion-champ" style="color: lightblue;">Esencia azul disponible: ${esenciaAzul}</p>
     `
 
 const mostrarError = () => esenciaActual.innerHTML += ` 
@@ -203,18 +203,18 @@ const consultarClimaApi = async () => {
     const resultadoDiv = document.getElementById('resultado');
 
     try {
-      resultadoDiv.innerHTML = `<p>Consultando clima para: ${ciudad}, ${pais}</p>`;
+      resultadoDiv.innerHTML = `<p style="color: white;">Consultando clima para: ${ciudad}, ${pais}</p>`;
 
       const respuesta = await fetch(url);
       const datos = await respuesta.json();
 
       resultadoDiv.innerHTML += `
-        <p>Temperatura: ${datos.main.temp} K</p>
-        <p>Humedad: ${datos.main.humidity}%</p>
+        <p style="color: white;">Temperatura: ${datos.main.temp} K</p>
+        <p style="color: white;">Humedad: ${datos.main.humidity}%</p>
       `;
     } catch (error) {
       console.error(error);
-      resultadoDiv.innerHTML = '<p>Error al consultar el clima.</p>';
+      resultadoDiv.innerHTML = '<p style="color: white;">Error al consultar el clima.</p>';
     }
 };
 
