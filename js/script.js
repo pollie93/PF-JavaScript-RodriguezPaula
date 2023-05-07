@@ -198,7 +198,7 @@ const btnConsultar = document.getElementById('btnConsultar');
 
 const consultarClimaApi = async () => {
     const appId = 'cca4101ea4deeaf1a8df8b41cd61b44a';
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${appId}`;
 
     const resultadoDiv = document.getElementById('resultado');
 
