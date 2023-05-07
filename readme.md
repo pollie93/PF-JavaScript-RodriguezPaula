@@ -26,9 +26,9 @@ Para el desarrollo de dicha web utilizamos videos/información extraída de la p
 
 ### Uso:
 
-    - Se puede realizar la compra de campeones a base de una cantidad determinada de esencia azul.
-    - A la vez se utilizan funciones asincrónicas.
-    - Podemos hacer un llamado a la API pública por medio del método GET, utilizando fetch, el cual devuelve la temperatura y humedad de la provincia de Buenos Aires, Argentina.
+1. Se puede realizar la compra de campeones a base de una cantidad determinada de esencia azul.
+2. A la vez se utilizan funciones asincrónicas.
+3. Podemos hacer un llamado a la API pública por medio del método GET, utilizando fetch, el cual devuelve la temperatura y humedad de la provincia de Buenos Aires, Argentina.
 
 > **_NOTA:_** La web puede correr en cualquiera de los siguientes navegadores: Safari, Chrome, Microsoft Edge, Firefox, Opera, entre otros.
 
