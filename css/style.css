@@ -64,7 +64,6 @@
 .add-cart {
   padding: 6px 15px;
   font-size: 1.1em;
-  color: #fff;
 }
 
 * {
@@ -432,6 +431,7 @@ h2 {
   font-size: 1.1em;
   font-weight: 600;
   text-align: center;
+  color: #f2f0f0;
   margin: auto;
 }
 

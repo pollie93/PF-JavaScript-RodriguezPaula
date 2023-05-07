@@ -73,6 +73,7 @@
         font-weight: $textBoldI;
         text-align: center;
         margin: auto;
+        color: map-get($map: $whitePalette, $key: "dos");
       }
     }
   }
